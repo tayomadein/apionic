@@ -1,0 +1,40 @@
+page-fulfillment {
+
+    #ordersSegment{
+        padding-bottom: 50px;
+        padding-left: 16px;
+    }
+
+    .skuCard{
+        width: 280px;
+        height: 350px;
+        cursor: pointer;
+    }
+
+    .fabContainer{
+        cursor: pointer;
+    }
+
+    .fabContainer:hover .fabLabel{}
+
+    .fabLabel{
+        position: absolute;
+        right: 56px;
+        //border: 1px solid green;
+        margin-top: 16px;
+        min-width: 120px;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    #newFabList{}
+
+    #mainFab{}
+
+    #toDefaultMode{
+        font-size: 110%;
+        cursor: pointer;
+    }
+
+}

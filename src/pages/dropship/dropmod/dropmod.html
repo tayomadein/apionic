@@ -1,0 +1,132 @@
+<!--<!--
+  Generated template for the Dropship page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Dropship</ion-title>
+
+        <ion-buttons start>
+            <button ion-button icon-left (click)="prev()"><ion-icon name="arrow-back"></ion-icon> Prev</button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-right (click)="next()">Next <ion-icon name="arrow-forward"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding="20px">
+    <ion-grid>
+        <ion-row>
+            <ion-col width-90>
+                <ion-slides #orderSlider>
+
+                    <ion-slide>
+
+
+                        <ion-list>
+
+                            <form [formGroup]="slideOneForm">
+
+                                <ion-item>
+                                    <ion-label stacked>Name</ion-label>
+                                    <ion-input formControlName="Name" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Phone</ion-label>
+                                    <ion-input formControlName="Phone" type="number"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Country</ion-label>
+                                    <ion-input formControlName="Country" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>State</ion-label>
+                                    <ion-input formControlName="State" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>City</ion-label>
+                                    <ion-input formControlName="City" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Street</ion-label>
+                                    <ion-input formControlName="Street" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked="">Instruction</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-buttons end>
+                                    <button ion-button icon-right (click)="next()">Next <ion-icon name="arrow-forward"></ion-icon></button>
+                                </ion-buttons>
+
+                            </form>
+
+                        </ion-list>
+                    </ion-slide>
+
+
+
+                    <ion-slide>
+                        <ion-list>
+                            <form [formGroup]="slideTwoForm">
+
+                                <ion-item>
+                                    <ion-label stacked>Type</ion-label>
+                                    <ion-input formControlName="Type" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Price</ion-label>
+                                    <ion-input formControlName="Price" type="number"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Description</ion-label>
+                                    <ion-input formControlName="Description" type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked>Weight</ion-label>
+                                    <ion-input formControlName="Weight" type="number"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked="">Height</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label stacked="">Depth</ion-label>
+                                    <ion-input type="text"></ion-input>
+                                </ion-item>
+
+                                <ion-buttons end>
+                                    <button ion-button icon-right (click)="submit()"><ion-icon name="arrow-dropdown-circle"></ion-icon> Submit</button>
+                                </ion-buttons>
+
+
+                            </form>
+                        </ion-list>
+
+                    </ion-slide>
+
+                </ion-slides>
+            </ion-col>
+
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>-->

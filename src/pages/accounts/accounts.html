@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar padding color='ion-title-color'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Accounts
+      <ion-icon name='people'></ion-icon>
+    </ion-title>
+<!--button to delete an account-->
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!--delet button ends here-->
+
+  </ion-navbar>
+</ion-header>
+
+<!--images linked to card starts here-->
+<ion-content class="card-background-page" padding>
+
+  <ion-fab bottom right padding>
+    <button ion-fab floating color="dark" (click)="showNew(item)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of Items">
+        <!--Loop of account cards -->
+        <div class=" accbox">
+          <ion-card class=itemcard>
+            <div class="acc image">
+              <img src={{item.imgsrc}} (click)="showItems(item)" />
+            </div>
+            <ion-card-content left text-left>
+              <ion-card-title color="secondary" padding>
+                {{item.username}}
+              </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <!--accountbox ends here-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

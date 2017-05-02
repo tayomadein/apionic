@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar color="dark" padding>
+        <ion-title>
+            Order Details
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="closeView()" padding>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-toolbar color="light">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-sm-3 col-xs-12>
+                    <img src="{{receiver_imgsrc}}" class="avatar" left/>
+                </ion-col>
+                <ion-col col-sm-9 col-xs-12>
+                    <h1>{{receiver_name}}</h1>
+                    <h3>{{receiver_country}}</h3>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+
+    <div padding>
+        <h4 color="primary">Items Ordered</h4>
+        <ion-list>
+            <ion-item *ngFor="let item of items">
+                <div item-left>
+                    <img src="{{item.sku.imgsrc}}" class="thumbnail"/>
+                </div>
+                <h2 color="dark">{{item.sku.name}}</h2>
+                <p><span color="primary">{{item.quantity_ordered}} unit<span *ngIf="item.quantity_ordered > 1">s</span></span> x <span color="primary">${{item.sku.price}} ea.</span></p>
+                <div item-right><h2 color="primary">${{item.quantity_ordered * item.sku.price}}</h2></div>
+            </ion-item>
+        </ion-list>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h1 color="primary" class="right">${{grand_total}}.00</h1>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>

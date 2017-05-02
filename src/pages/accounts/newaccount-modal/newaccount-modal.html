@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-toolbar color="dark" padding>
+        <ion-title>Create New Account</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="closeView()" padding>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!--Account Forms starts here-->
+<ion-content padding>
+    <ion-grid padding>
+        <ion-row>
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Name</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-person" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Email</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-mail" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Phone</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="phone-portrait" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Country</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="md-globe" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">City</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-home" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Street one</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-pin" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Street two</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-pin" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list padding>
+                    <ion-item>
+                        <ion-label floating color="dark">Street three</ion-label>
+                        <ion-input type="text"></ion-input>
+                        <ion-icon name="ios-pin" floating color="secondary" item-left></ion-icon>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+          <!--button to save data-->
+     <ion-row>
+        <ion-col>
+            <ion-buttons end>
+                <button ion-button floating color="primary">Submit</button>
+            </ion-buttons>
+        </ion-col>
+     </ion-row>
+    </ion-grid>
+    <!--Account form ends here-->
+</ion-content>

@@ -1,0 +1,183 @@
+<ion-header>
+    <ion-toolbar color="dark" padding>
+        <ion-title>
+            Create New Stock Keeping Unit
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="closeView(0)" padding>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+<ion-grid padding>
+    <ion-row>
+        <ion-item>
+            <h1 color="dark">Description</h1>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+                <button ion-button clear padding (click)="showCategories($event)">
+                    {{category}}<ion-icon name="arrow-dropdown" padding></ion-icon>
+                </button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Product Name</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>SKU Name</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Store</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Short Description</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Long Description</ion-label>
+                <ion-textarea></ion-textarea>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row padding></ion-row>
+    <!--End Description-->
+
+
+    <!--Begin Properties Section-->
+    <ion-row>
+        <ion-item>
+            <h1 color="dark">Properties</h1>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <button ion-button clear padding (click)="showUnitTypes($event)">
+                {{unitType}}
+                <ion-icon name="arrow-dropdown" padding></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Height</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Width</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Breadth</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Weight</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row padding></ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-checkbox></ion-checkbox>
+                <ion-label color="primary">Is Fragile</ion-label>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <button ion-button>Upload Image</button>
+            <ion-input type="text" placeholder="No File Chosen" disabled></ion-input>
+        </ion-col>
+    </ion-row>
+    <ion-row padding></ion-row>
+    <!--End properties-->
+
+
+    <!--Begin Prices-->
+    <ion-row>
+        <ion-item>
+            <h1 color="dark">Prices</h1>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <button ion-button clear padding (click)="showCurrencyCodes($event)">
+                {{currencyCode}}
+                <ion-icon name="arrow-dropdown" padding></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Price</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary" floating>Special Price</ion-label>
+                <ion-input type="number"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+
+        <ion-col>
+            <ion-item>
+                <ion-label color="primary">MSRP</ion-label>
+                <ion-input type="number" placeholder="Minimum stock retail price"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <!-- End Prices Section-->
+
+    <!--Submit Button -->
+    <ion-row>
+        <ion-col>
+            <ion-buttons end>
+                <button ion-button (click)="createSKU()">Create SKU</button>
+            </ion-buttons>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+</ion-content>

@@ -1,0 +1,29 @@
+page-locations {
+.locCard{
+    background-color: #607d8b;
+    color: white;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    .cardHeader {
+        border-bottom: 2px solid #58504e;
+    }
+    h1{
+        display: inline;
+        padding: 3px;
+        color: white;
+    }
+    p {
+        color: white;
+        text-align: center;
+    }
+    #p1{
+        font-size: large;
+    }
+        #p2{
+        font-size: medium;
+    }
+        #p3{
+        font-size: small;
+    }
+}
+}

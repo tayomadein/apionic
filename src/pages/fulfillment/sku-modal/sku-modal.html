@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-toolbar color="dark" padding>
+        <ion-title>
+            {{name}}
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="closeView()" padding>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <img src="{{imgsrc}}"/>
+    <ion-grid padding>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating color="primary">SKU Name</ion-label>
+                        <ion-input type="text" [(ngModel)]="name"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating color="primary">Category</ion-label>
+                        <ion-input type="text" value="Miscellaneous" disabled></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating color="primary">SKU Price ($)</ion-label>
+                        <ion-input type="number" [(ngModel)]="price"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating color="primary">SKU Quantity Left</ion-label>
+                        <ion-input type="number" [(ngModel)]="quantity_left"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        <ion-label floating color="primary">SKU Description</ion-label>
+                        <ion-textarea [(ngModel)]="description"></ion-textarea>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <ion-buttons end>
+                    <button ion-button disabled outline #updateBtn (click)="closeView()" id="updateBtn">
+                        Update
+                    </button>
+                </ion-buttons>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+<!--
+TO-DO:
+- Picture uploads?
+
+-->

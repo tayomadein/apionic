@@ -1,0 +1,141 @@
+<ion-header>
+    <ion-navbar padding color='ion-title-color'>
+        <button ion-button menuToggle margin>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title padding>Fulfillment
+            <ion-icon name='cart'></ion-icon>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header> <!--End header-->
+
+<ion-content>
+    <ion-fab bottom right padding id="mainFab">
+        <button ion-fab>
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <ion-fab-list side="top" id="newFabList">
+            <span class="fabContainer" (click)="newSKUModal()">
+                <span class="fabLabel">New SKU</span>
+            <button ion-fab color="dark">
+                    <ion-icon name="basket"></ion-icon>
+                </button>
+            </span>
+            <span class="fabContainer">
+                <span class="fabLabel">New Order</span>
+            <button ion-fab color="dark">
+                    <ion-icon name="cart"></ion-icon>
+                </button>
+            </span>
+            <span class="fabContainer">
+                <span class="fabLabel">New Shipment</span>
+            <button ion-fab color="dark">
+                    <ion-icon name="clipboard"></ion-icon>
+                </button>
+            </span>
+        </ion-fab-list>
+    </ion-fab> <!--End fab button-->
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-segment [(ngModel)]="fulfillmentTabs">
+                    <ion-segment-button value="Inventory">
+                        Inventory
+                    </ion-segment-button>
+                    <ion-segment-button value="Orders">
+                        Orders
+                    </ion-segment-button>
+                </ion-segment>
+            </ion-col>
+        </ion-row>
+    </ion-grid> <!-- End segment heading-->
+
+    <div [ngSwitch]="fulfillmentTabs">
+        <div padding *ngSwitchCase="'Inventory'">
+            <ion-grid>
+                <!--ion-row>
+                    <h3 color="dark">
+                          <ion-icon name="close-circle" id="toDefaultMode"></ion-icon>
+                          New Shipment
+                    </h3>
+                </ion-row>
+                <ion-row>
+                    <h4>Select the items you want to ship below</h4>
+                </ion-row-->
+                <ion-row>
+                    <ion-col>
+                        <ion-searchbar #skuSearch
+                        [(ngModel)]="skuSearchTerm"
+                        [showCancelButton]="shouldShowCancel"
+                        (ionCancel)="cancelSearch(skuSearch)"
+                        placeholder="Find SKU by name">
+                        </ion-searchbar>
+                    </ion-col>
+                </ion-row> <!-- End SKU list searchbar -->
+                <ion-row *ngIf="SKUList">
+                    <ion-col *ngFor="let sku of SKUList | filterByProperty:'name':skuSearchTerm" margin padding>
+                        <ion-card class="skuCard" (click)="selectSKU(sku)">
+                            <img src={{sku.imgsrc}}/>
+                            <ion-card-content center text-center>
+                                <ion-card-title>
+                                    {{sku.name}}
+                                </ion-card-title>
+                                <p>
+                                    {{sku.description}}
+                                </p>
+                            </ion-card-content>
+                            <ion-row no-padding>
+                                <ion-col center text-center>
+                                    <ion-note color="primary">${{sku.price}}</ion-note>
+                                </ion-col>
+                                <ion-col center text-center>
+                                    <ion-note>
+                                        {{sku.quantity_left}} left
+                                    </ion-note>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div><!-- End inventory segment -->
+
+
+        <div padding *ngSwitchCase="'Orders'" id="ordersSegment">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-searchbar #orderSearch
+                        [(ngModel)]="orderSearchTerm"
+                        [showCancelButton]="shouldShowCancel"
+                        (ionCancel)="cancelSearch(orderSearch)"
+                        placeholder="Find order by receiver name">
+                        </ion-searchbar>
+                    </ion-col>
+                </ion-row> <!-- End Order list searchbar -->
+                <ion-row>
+                    <ion-col>
+                        <ion-list *ngIf="orderList">
+                            <ion-item *ngFor="let order of orderList | filterByProperty:'receiver_name':orderSearchTerm">
+                                <div item-left>
+                                    <img src="{{order.receiver_imgsrc}}" />
+                                </div>
+                                <h2 color="dark">{{order.receiver_name}}</h2>
+                                <p>{{order.receiver_country}} • ${{order.grand_total}}</p>
+                                <button ion-button item-right clear (click)="showOrderModal(order)">
+                                View Order
+                            </button>
+                            </ion-item>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div><!-- End orders segment -->
+    </div> <!-- End container for segments -->
+</ion-content>
